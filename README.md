@@ -19,8 +19,8 @@ To contribute to the project, follow these steps:
 2. **Clone the repository**: Clone the forked repository to your local machine.
 
    ```bash
-   git clone https://github.com/yourusername/quiz-app.git
-   cd quiz-app
+   git clone https://github.com/yourusername/Quiz-Application.git
+   cd Quiz-Application
    ```
 
 3. **Create a new branch**: Create a new branch for your feature or bug fix.
