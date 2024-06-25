@@ -42,3 +42,11 @@ def register(request):
 
     context = {}
     return render(request , 'register.html' , context)
+
+def profile(request , username):
+
+    user_object = User.objects.get(username=username)
+    user_profile = Profile.objects.get(user=user_object)
+
+    context = { "user_profile" : user_profile}
+    return render(request , 'profile.html' , context)
