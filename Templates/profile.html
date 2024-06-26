@@ -1,7 +1,7 @@
 {% extends "index.html" %} {% load static %} {% block content %}
 
 <div class="container text-center my-5">
-  <h1 class="display-6 my-4">{{ user_profile.user.user_name }} Profile</h1>
+  <h1 class="display-6 my-4">{{ user_profile.user.username }} Profile</h1>
 
   <div class="btn-group" role="group" aria-label="Basic mixed styles example">
     <button type="button" class="btn btn-outline-success">Edit</button>
@@ -11,20 +11,26 @@
   <div class="container text-center py-5">
     <div class="row">
       <div class="col">
-        <img width="200" height="200" src="./1.jpg" alt="username" />
-        <h3>{{ user_profile.user.user_name }}</h3>
+        <img
+          width="200"
+          height="200"
+          src="{{user_profile.profile_img.url}} "
+          alt="user-profile"
+          style="border-radius: 50%"
+        />
+        <h3 class="py-2">{{ user_profile.user.username }}</h3>
       </div>
 
       <div class="col py-5">
-        <h2>Ansh Prasad</h2>
+        <h2>{{ user_profile.name }}</h2>
         <p class="fs-5">
-          <i class="bi bi-person-fill"></i> {{ user_profile.user.gender }}
+          <i class="bi bi-person-fill"></i> {{ user_profile.gender }}
         </p>
         <p class="fs-5">
-          <i class="bi bi-geo-alt-fill"></i> {{ user_profile.user.location }}
+          <i class="bi bi-geo-alt-fill"></i> {{ user_profile.location }}
         </p>
         <p class="fs-5">
-          <i class="bi bi-pencil-square"></i> {{ user_profile.user.bio }}
+          <i class="bi bi-pencil-square"></i> {{ user_profile.bio }}
         </p>
       </div>
     </div>
@@ -33,7 +39,7 @@
 
     <div class="row py-5">
       <div class="col">
-        <h3>Quiz Attended by {{ user_profile.user.user_name }}</h3>
+        <h3>Quiz Attended</h3>
         <table class="my-5 table">
           <thead>
             <tr>
@@ -61,7 +67,7 @@
       </div>
 
       <div class="col py-3">
-        <h3>{{ user_profile.user.user_name }} Performance</h3>
+        <h3>Performance</h3>
       </div>
     </div>
   </div>
