@@ -24,13 +24,13 @@
       <div class="col py-5">
         <h2>{{ user_profile.name }}</h2>
         <p class="fs-5">
-          <i class="bi bi-person-fill"></i> {{ user_profile.gender }}
+          <i class="bi bi-person-fill"></i> {{ user_profile.gender | default:"Gender!" }}
         </p>
         <p class="fs-5">
-          <i class="bi bi-geo-alt-fill"></i> {{ user_profile.location }}
+          <i class="bi bi-geo-alt-fill"></i> {{ user_profile.location | default:"Location!" }}
         </p>
         <p class="fs-5">
-          <i class="bi bi-pencil-square"></i> {{ user_profile.bio }}
+          <i class="bi bi-pencil-square"></i> {{ user_profile.bio | default:"Bio!"}}
         </p>
       </div>
     </div>
