@@ -3,10 +3,12 @@
 <div class="container text-center my-5">
   <h1 class="display-6 my-4">{{ user_profile.user.username }} Profile</h1>
 
+  {% if request.user.username == user_profile.user.username  %}
   <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-    <button type="button" class="btn btn-outline-success">Edit</button>
-    <button type="button" class="btn btn-outline-danger">Delete</button>
+    <a type="button" href="{% url "edit" %}" class="btn btn-outline-success">Edit</a>
+    <a type="button" href="{% url "delete" %}" class="btn btn-outline-danger">Delete</a>
   </div>
+  {% endif %}
 
   <div class="container text-center py-5">
     <div class="row">

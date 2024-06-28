@@ -82,3 +82,20 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('login')
+
+
+@login_required(login_url='login')
+def editProfile(request):
+
+    user_object = User.objects.get(username=request.user)
+    user_profile = Profile.objects.get(user=user_object)
+
+    context = { "user_profile": user_profile}
+    return render(request , 'profile_edit.html', context)
+
+
+
+@login_required(login_url='login')
+def deleteProfile(request):
+    context = {}
+    return render(request , 'confirm.html', context)
